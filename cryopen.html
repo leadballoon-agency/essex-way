@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryoPen Treatment Essex - Remove Skin Tags & Warts | Essex Way Clinic</title>
+    <meta name="description" content="Professional CryoPen treatment in Essex. Safe, quick & effective removal of skin tags, warts, age spots & more. From £50. Book consultation with Devon today.">
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="index.html"><img src="images/logo.png" alt="The Essex Way Clinic"></a>
+            </div>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="index.html#treatments" class="nav-link">Treatments</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                
+                <li><a href="price-guide.html" class="nav-link">Pricing</a></li>
+                <li><a href="#booking" class="btn btn-primary">Book Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="treatment-hero cryopen-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="container">
+                <span class="hero-subtitle fade-in">Professional CryoPen Treatment</span>
+                <h1 class="hero-title fade-in-delay-1">Remove Skin Tags & Warts in Seconds</h1>
+                <p class="hero-description fade-in-delay-2">Safe, effective, and no cutting or stitches required. Treatment from just £50</p>
+                <div class="hero-buttons fade-in-delay-3">
+                    <a href="#booking" class="btn btn-primary btn-lg">Book Free Consultation</a>
+                    <a href="#how-it-works" class="btn btn-outline btn-lg">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Assessment Widget -->
+    <section class="assessment-widget">
+        <div class="container">
+            <div class="assessment-container" id="assessmentWidget">
+                <div class="assessment-header">
+                    <h2>Your Personal <strong>CryoPen Assessment</strong></h2>
+                    <div class="assessment-meta">
+                        <span class="assessment-step">Step <span id="currentStep">1</span> of 4</span>
+                    </div>
+                </div>
+                <p class="assessment-subtitle">Let's find the perfect treatment plan for you</p>
+
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressBar"></div>
+                </div>
+
+                <!-- Step 1: Treatment Type -->
+                <div class="assessment-step-content active" id="step1">
+                    <h3>What would you like to remove?</h3>
+                    <div class="treatment-options">
+                        <button class="treatment-option" data-value="skin_tags">
+                            <div class="option-content">
+                                <span class="option-icon">🏷️</span>
+                                <div class="option-text">
+                                    <h4>Skin Tags</h4>
+                                    <p>Small, harmless growths</p>
+                                </div>
+                            </div>
+                            <span class="option-badge">5-15 seconds</span>
+                        </button>
+                        <button class="treatment-option" data-value="warts">
+                            <div class="option-content">
+                                <span class="option-icon">🦠</span>
+                                <div class="option-text">
+                                    <h4>Warts/Verrucas</h4>
+                                    <p>Including plantar warts</p>
+                                </div>
+                            </div>
+                            <span class="option-badge">Child-friendly</span>
+                        </button>
+                        <button class="treatment-option" data-value="age_spots">
+                            <div class="option-content">
+                                <span class="option-icon">☀️</span>
+                                <div class="option-text">
+                                    <h4>Age/Sun Spots</h4>
+                                    <p>Pigmentation marks</p>
+                                </div>
+                            </div>
+                            <span class="option-badge">Single session</span>
+                        </button>
+                        <button class="treatment-option" data-value="multiple">
+                            <div class="option-content">
+                                <span class="option-icon">📋</span>
+                                <div class="option-text">
+                                    <h4>Multiple Issues</h4>
+                                    <p>Various skin concerns</p>
+                                </div>
+                            </div>
+                            <span class="option-badge">Consultation advised</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 2: Lesion Count -->
+                <div class="assessment-step-content" id="step2">
+                    <h3>How many need treatment?</h3>
+                    <div class="count-options">
+                        <button class="count-option" data-count="1">1</button>
+                        <button class="count-option" data-count="2">2</button>
+                        <button class="count-option" data-count="3">3</button>
+                        <button class="count-option" data-count="4">4</button>
+                        <button class="count-option" data-count="5">5</button>
+                        <button class="count-option" data-count="6">6</button>
+                        <button class="count-option" data-count="7">7</button>
+                        <button class="count-option" data-count="10">8+</button>
+                    </div>
+                    <button class="back-button" onclick="previousStep()">← Back</button>
+                </div>
+
+                <!-- Step 3: Urgency -->
+                <div class="assessment-step-content" id="step3">
+                    <h3>When would you like treatment?</h3>
+                    <div class="urgency-options">
+                        <button class="urgency-option" data-urgency="asap">
+                            <span>As soon as possible</span>
+                            <span class="arrow">→</span>
+                        </button>
+                        <button class="urgency-option" data-urgency="this_week">
+                            <span>This week</span>
+                            <span class="arrow">→</span>
+                        </button>
+                        <button class="urgency-option" data-urgency="this_month">
+                            <span>This month</span>
+                            <span class="arrow">→</span>
+                        </button>
+                        <button class="urgency-option" data-urgency="flexible">
+                            <span>I'm flexible</span>
+                            <span class="arrow">→</span>
+                        </button>
+                    </div>
+                    <button class="back-button" onclick="previousStep()">← Back</button>
+                </div>
+
+                <!-- Step 4: Contact Form -->
+                <div class="assessment-step-content" id="step4">
+                    <h3>Almost done! Get your personalized quote</h3>
+                    <p class="step-subtitle">We'll send you pricing and available appointment times</p>
+
+                    <form id="assessmentForm" class="assessment-form">
+                        <div class="form-group">
+                            <label for="assessment-name">Your Name *</label>
+                            <input type="text" id="assessment-name" required placeholder="Enter your full name">
+                        </div>
+                        <div class="form-group">
+                            <label for="assessment-email">Email Address</label>
+                            <input type="email" id="assessment-email" placeholder="your@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="assessment-phone">Phone Number</label>
+                            <input type="tel" id="assessment-phone" placeholder="07... (UK mobile)">
+                        </div>
+                        <p class="form-note">* Required. Provide either email or phone number (or both)</p>
+                        <button type="submit" class="btn btn-primary btn-block">Get My Personalized Quote →</button>
+                    </form>
+                    <button class="back-button" onclick="previousStep()">← Back</button>
+                </div>
+
+                <!-- Success Message -->
+                <div class="assessment-step-content" id="stepSuccess">
+                    <div class="success-message">
+                        <div class="success-icon">✓</div>
+                        <h3>Thank you! We'll be in touch shortly</h3>
+                        <p>Your personalized quote and available appointment times will be sent to you soon.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction -->
+    <section class="treatment-intro">
+        <div class="container">
+            <div class="intro-grid">
+                <div class="intro-content">
+                    <span class="section-subtitle">Award-Winning Treatment</span>
+                    <h2 class="section-title">The Gold Standard for Removing Skin Lesions</h2>
+                    <p>Professional CryoPen treatment at Essex Way Clinic. Our advanced cryotherapy system safely and effectively removes skin tags, warts, age spots, and other benign skin lesions.</p>
+                    <p>CryoPen uses extreme cold (cryotherapy) to freeze and destroy unwanted skin lesions with pinpoint accuracy. The treatment is quick, precise, and requires no cutting or stitches.</p>
+
+                    <div class="trust-badges">
+                        <div class="badge-item">
+                            <strong>FDA/CE Approved</strong>
+                            <span>Certified equipment</span>
+                        </div>
+                        <div class="badge-item">
+                            <strong>98% Success Rate</strong>
+                            <span>Proven results</span>
+                        </div>
+                        <div class="badge-item">
+                            <strong>2025 Award Winner</strong>
+                            <span>England's Business Awards</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="intro-benefits">
+                    <h3>What We Treat</h3>
+                    <ul class="benefits-list">
+                        <li>Skin Tags</li>
+                        <li>Warts (including verrucas)</li>
+                        <li>Age Spots</li>
+                        <li>Seborrheic Keratosis</li>
+                        <li>Cherry Angiomas</li>
+                        <li>Actinic Keratosis</li>
+                        <li>Fibromas</li>
+                        <li>Milia</li>
+                    </ul>
+
+                    <div class="key-features">
+                        <h4>Key Benefits:</h4>
+                        <ul class="benefits-list">
+                            <li>No cutting or stitches needed</li>
+                            <li>Safe for children aged 6+</li>
+                            <li>Minimal scarring risk</li>
+                            <li>Quick healing (1-4 weeks)</li>
+                            <li>Single treatment session</li>
+                            <li>Same week appointments</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Before/After Gallery -->
+    <section class="before-after-gallery">
+        <div class="container">
+            <h2 class="section-title">Real Results From Real Patients</h2>
+            <p class="section-description">Drag or hover to compare before and after</p>
+
+            <div class="gallery-container">
+                <div class="before-after-slider" id="beforeAfterSlider">
+                    <div class="slider-images">
+                        <img src="images/before-after/skin-tags-after.jpg" alt="After treatment" class="after-image">
+                        <div class="before-image-container" id="beforeContainer">
+                            <img src="images/before-after/skin-tags-before.jpg" alt="Before treatment" class="before-image">
+                        </div>
+                        <div class="slider-handle" id="sliderHandle">
+                            <div class="handle-line"></div>
+                            <div class="handle-circle">
+                                <span>⟷</span>
+                            </div>
+                            <div class="handle-line"></div>
+                        </div>
+                    </div>
+                    <div class="slider-labels">
+                        <span class="label-before">Before</span>
+                        <span class="label-after">After</span>
+                    </div>
+                </div>
+
+                <div class="gallery-info">
+                    <h3 id="galleryTitle">Skin Tags</h3>
+                    <p id="galleryDescription">Neck area - Single session</p>
+                    <p id="galleryTimeframe">Healing time: 2 weeks</p>
+                </div>
+
+                <div class="gallery-tabs">
+                    <button class="gallery-tab active" data-case="0">Skin Tags</button>
+                    <button class="gallery-tab" data-case="1">Warts</button>
+                    <button class="gallery-tab" data-case="2">Age Spots</button>
+                    <button class="gallery-tab" data-case="3">Seborrheic Keratosis</button>
+                    <button class="gallery-tab" data-case="4">Cherry Angiomas</button>
+                    <button class="gallery-tab" data-case="5">Actinic Keratosis</button>
+                </div>
+
+                <p class="gallery-disclaimer">*Individual results may vary. All images show real patient results.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="comparison-section">
+        <div class="container">
+            <h2 class="section-title">Why CryoPen Treatment?</h2>
+            <p class="section-description">The gold standard for removing skin lesions quickly and safely</p>
+
+            <div class="comparison-grid">
+                <div class="comparison-card traditional">
+                    <h3>Traditional Methods</h3>
+                    <ul class="comparison-list negative">
+                        <li>Surgical cutting and stitches</li>
+                        <li>Risk of scarring</li>
+                        <li>Long recovery time</li>
+                        <li>Multiple appointments needed</li>
+                    </ul>
+                </div>
+
+                <div class="comparison-card modern">
+                    <h3>CryoPen Treatment</h3>
+                    <ul class="comparison-list positive">
+                        <li>No cutting or stitches</li>
+                        <li>Minimal scarring risk</li>
+                        <li>Quick healing (1-4 weeks)</li>
+                        <li>Single treatment session</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">How Does CryoPen Work?</h2>
+                <p class="section-description">The science behind our safe and effective treatment</p>
+            </div>
+
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Free Consultation</h3>
+                    <p>Speak with Kerry, our bookings manager, for a quick 30-second assessment. We'll evaluate your skin lesion and provide a personalized quote.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Precise Application</h3>
+                    <p>Devon applies the CryoPen directly to the lesion with pinpoint accuracy. The treatment uses extreme cold (-89°C) to freeze the unwanted tissue.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Natural Healing</h3>
+                    <p>The frozen tissue naturally falls off as your skin heals over 1-4 weeks. No cutting, no stitches, minimal discomfort.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Clear Skin</h3>
+                    <p>Enjoy clear, smooth skin with minimal to no scarring. Most lesions are removed in a single session.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section">
+        <div class="container">
+            <h2 class="section-title">Investment in Your Confidence</h2>
+            <p class="section-description">Professional treatments starting from £55</p>
+
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Consultation</h3>
+                    <div class="price">£25</div>
+                    <p>Professional assessment with Devon</p>
+                    <ul class="pricing-features">
+                        <li>Skin analysis</li>
+                        <li>Treatment recommendation</li>
+                        <li>Personalized quote</li>
+                        <li>No obligation</li>
+                    </ul>
+                </div>
+
+                <div class="pricing-card featured">
+                    <span class="badge">Most Popular</span>
+                    <h3>Single Lesion</h3>
+                    <div class="price">From £55</div>
+                    <p>Professional CryoPen treatment</p>
+                    <ul class="pricing-features">
+                        <li>Expert treatment by Devon</li>
+                        <li>Comprehensive aftercare</li>
+                        <li>Follow-up support</li>
+                        <li>Satisfaction guaranteed</li>
+                    </ul>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>Multiple Lesions</h3>
+                    <div class="price">Discounts Available</div>
+                    <p>Package benefits included</p>
+                    <ul class="pricing-features">
+                        <li>Multiple lesion discounts</li>
+                        <li>Same-session treatment</li>
+                        <li>Flexible payment plans</li>
+                        <li>Family & group rates</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pricing-factors">
+                <h3>Your pricing is based on:</h3>
+                <div class="factors-grid">
+                    <div class="factor">
+                        <strong>Type</strong>
+                        <span>of lesion</span>
+                    </div>
+                    <div class="factor">
+                        <strong>Number</strong>
+                        <span>of areas</span>
+                    </div>
+                    <div class="factor">
+                        <strong>Size</strong>
+                        <span>& location</span>
+                    </div>
+                    <div class="factor">
+                        <strong>Treatment</strong>
+                        <span>complexity</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pricing-guarantees">
+                <div class="guarantee">
+                    <h4>Price Match Promise</h4>
+                    <p>We'll match any comparable local clinic</p>
+                </div>
+                <div class="guarantee">
+                    <h4>No Hidden Fees</h4>
+                    <p>Transparent pricing, always</p>
+                </div>
+                <div class="guarantee">
+                    <h4>Satisfaction Guaranteed</h4>
+                    <p>98% success rate with CryoPen</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet Devon -->
+    <section class="practitioner-section">
+        <div class="container">
+            <h2 class="section-title">Meet Your CryoPen Specialist</h2>
+            <p class="section-description">Professional, certified, and dedicated to your skin health</p>
+
+            <div class="practitioner-grid">
+                <div class="practitioner-image">
+                    <img src="images/about.webp" alt="Devon - Lead CryoPen Practitioner">
+                </div>
+                <div class="practitioner-content">
+                    <h3>Devon</h3>
+                    <p class="role">Lead CryoPen Practitioner</p>
+                    <div class="credentials">
+                        <span>⭐ 5.0 from 50+ reviews</span>
+                        <span>✓ Advanced CryoPen Certified</span>
+                        <span>✓ Expert in Skin Lesion Removal</span>
+                        <span>✓ Specializing in Child-Friendly Care</span>
+                        <span>✓ Fully Insured & Licensed</span>
+                    </div>
+
+                    <h4>Why Choose Devon?</h4>
+                    <p>With advanced training in CryoPen treatments, Devon brings expertise and precision to every procedure. Her gentle approach and attention to detail ensure every patient feels comfortable and confident throughout their treatment journey.</p>
+
+                    <div class="approach-points">
+                        <ul>
+                            <li>Thorough consultation to understand your needs</li>
+                            <li>Clear explanation of the treatment process</li>
+                            <li>Pain management techniques for sensitive patients</li>
+                            <li>Comprehensive aftercare support</li>
+                        </ul>
+                    </div>
+
+                    <blockquote>
+                        "Devon put me completely at ease, explained everything thoroughly, and the results have been amazing!"
+                        <cite>- Tina H., Verified Patient</cite>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <h3>Is CryoPen treatment painful?</h3>
+                    <p>Most patients experience minimal discomfort. You may feel a slight stinging or cold sensation during treatment, which typically lasts only a few seconds. The treatment is generally well-tolerated, even by children aged 6 and up.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>How long does the treatment take?</h3>
+                    <p>Treatment time varies depending on the size and number of lesions. Most single lesions can be treated in just a few seconds to a couple of minutes. A typical appointment, including consultation, takes 15-30 minutes.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>What is the healing time?</h3>
+                    <p>Healing time varies from 1-4 weeks depending on the lesion type, size, and location. During this time, the treated area will form a scab which will naturally fall off as new skin forms underneath.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Will there be scarring?</h3>
+                    <p>CryoPen treatment typically results in minimal to no scarring when proper aftercare is followed. The risk of scarring is significantly lower than traditional surgical removal methods.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>How many treatments will I need?</h3>
+                    <p>Most lesions can be successfully removed in a single treatment session. However, some larger or more stubborn lesions may require a follow-up treatment after healing.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Can all skin lesions be treated with CryoPen?</h3>
+                    <p>CryoPen is suitable for most benign skin lesions including skin tags, warts, age spots, and more. During your consultation, Devon will assess your lesion to ensure CryoPen is the appropriate treatment.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Is CryoPen safe for children?</h3>
+                    <p>Yes! CryoPen is safe for children aged 6 and above. Devon has specialized training in child-friendly care and uses techniques to ensure young patients feel comfortable and safe throughout the treatment.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>What aftercare is required?</h3>
+                    <p>Aftercare is simple and straightforward. Keep the area clean and dry, avoid picking at any scabs, and protect from sun exposure. Devon will provide you with detailed aftercare instructions following your treatment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section class="booking" id="booking">
+        <div class="container">
+            <div class="booking-content">
+                <div class="booking-info">
+                    <span class="section-subtitle">Take the Next Step</span>
+                    <h2 class="section-title">Book Your CryoPen Treatment</h2>
+                    <p>Ready to remove your skin lesions? Schedule a free consultation with Devon today.</p>
+
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <span class="contact-icon">📞</span>
+                            <div>
+                                <strong>Phone</strong>
+                                <a href="tel:+447414452441">07414 452441</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📧</span>
+                            <div>
+                                <strong>Email</strong>
+                                <a href="mailto:support@theessexwayclinic.com">support@theessexwayclinic.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📍</span>
+                            <div>
+                                <strong>Address</strong>
+                                <span>Aveley House, Arcany Road<br>South Ockendon, Essex RM15 5SX</span>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">🕐</span>
+                            <div>
+                                <strong>Hours</strong>
+                                <span>Mon-Fri: 9am – 6pm<br>Saturday: 9am – 4pm<br>Sunday: Closed</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="booking-form-container">
+                    <form class="booking-form" id="bookingForm">
+                        <h3>Get Your Free Assessment</h3>
+
+                        <div class="form-group">
+                            <label for="name">Your Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Your Phone *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Your Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="lesion-type">Type of Lesion</label>
+                            <select id="lesion-type" name="lesion-type">
+                                <option value="">Select type...</option>
+                                <option value="skin-tag">Skin Tag</option>
+                                <option value="wart">Wart</option>
+                                <option value="age-spot">Age Spot</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="date">Preferred Date</label>
+                                <input type="date" id="date" name="date">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="time">Preferred Time</label>
+                                <input type="time" id="time" name="time">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Tell us about your lesion</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Location, size, how long you've had it..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block">Request Free Consultation</button>
+                        <p class="form-note">Treatment from just £55 | Same week appointments available</p>
+                    </form>
+
+                    <div class="payment-options">
+                        <p class="payment-text">Flexible payment plans available</p>
+                        <img src="images/klarna-badge.svg" alt="Pay with Klarna" class="klarna-logo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>The Essex Way Clinic</h3>
+                    <p>Your trusted family-run beauty clinic in Essex, specializing in advanced aesthetic treatments.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Treatments</h4>
+                    <ul>
+                        <li><a href="hifu.html">HIFU</a></li>
+                        <li><a href="cryopen.html">CryoPen</a></li>
+                        <li><a href="co2-laser.html">CO2 Laser</a></li>
+                        <li><a href="emlift.html">3D EMLift</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        
+                        <li><a href="price-guide.html" class="nav-link">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/theessexwayclinic" target="_blank" rel="noopener">Instagram</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 The Essex Way Clinic. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/447414452441?text=Hi,%20I'm%20interested%20in%20CryoPen%20treatment"
+       class="whatsapp-button"
+       target="_blank"
+       rel="noopener"
+       aria-label="Chat on WhatsApp">
+        <svg viewBox="0 0 32 32" fill="currentColor">
+            <path d="M16 0C7.164 0 0 7.163 0 16c0 2.842.753 5.506 2.068 7.813L.054 31.667l8.089-2.076A15.86 15.86 0 0016 32c8.836 0 16-7.164 16-16S24.836 0 16 0zm9.447 22.674c-.393 1.105-2.314 2.071-3.167 2.151-.837.08-1.827.158-5.916-1.261-5.187-1.799-8.523-6.983-8.778-7.303-.248-.32-2.047-2.708-2.047-5.168 0-2.461 1.298-3.671 1.759-4.172.461-.5 1.007-.626 1.344-.626.337 0 .672.003.967.018.314.015.735-.119 1.149.877.414.996 1.413 3.441 1.538 3.689.125.248.208.537.042.857-.166.32-.249.518-.497.797-.248.279-.522.622-.747.834-.248.238-.506.497-.218.973.289.476 1.283 2.109 2.754 3.417 1.893 1.683 3.479 2.205 3.973 2.453.494.248.784.206 1.073-.125.289-.331 1.243-1.448 1.574-1.948.331-.5.663-.415 1.116-.248.453.167 2.869 1.352 3.362 1.6.494.248.823.372.943.578.124.205.124 1.188-.269 2.293z"/>
+        </svg>
+        <span>Chat on WhatsApp</span>
+    </a>
+
+    <!-- Floating CTA -->
+    <div class="floating-cta" id="floatingCTA">
+        <div class="floating-cta-content">
+            <div class="floating-cta-text">
+                <strong>Ready to remove your skin lesions?</strong>
+                <span>Book your free consultation today</span>
+            </div>
+            <a href="#booking" class="btn btn-primary">Book Now</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="cryopen-widgets.js"></script>
+</body>
+</html>
