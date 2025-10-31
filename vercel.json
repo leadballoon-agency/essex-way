@@ -1,11 +1,20 @@
 {
-  "cleanUrls": true,
-  "trailingSlash": false,
   "rewrites": [
-    {
-      "source": "/co2laser",
-      "destination": "/co2-laser"
-    }
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/about", "destination": "/about.html" },
+    { "source": "/price-guide", "destination": "/price-guide.html" },
+    { "source": "/hifu", "destination": "/hifu.html" },
+    { "source": "/co2-laser", "destination": "/co2-laser.html" },
+    { "source": "/co2laser", "destination": "/co2-laser.html" },
+    { "source": "/emlift", "destination": "/emlift.html" },
+    { "source": "/cryopen", "destination": "/cryopen.html" },
+    { "source": "/dermal-fillers", "destination": "/dermal-fillers.html" },
+    { "source": "/lip-enhancement", "destination": "/lip-enhancement.html" },
+    { "source": "/skin-boosters", "destination": "/skin-boosters.html" },
+    { "source": "/microneedling", "destination": "/microneedling.html" },
+    { "source": "/prp-therapy", "destination": "/prp-therapy.html" },
+    { "source": "/body-sculpting", "destination": "/body-sculpting.html" },
+    { "source": "/anti-wrinkle", "destination": "/anti-wrinkle.html" }
   ],
   "headers": [
     {
