@@ -1,11 +1,10 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
-  "redirects": [
+  "rewrites": [
     {
       "source": "/co2laser",
-      "destination": "/co2-laser.html",
-      "permanent": false
+      "destination": "/co2-laser"
     }
   ],
   "headers": [
