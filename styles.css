@@ -1054,43 +1054,47 @@ textarea {
 }
 
 .cryopen-hero {
-    background-image: url('images/treatment-3.webp');
+    background-image: url('images/cryopen/cryopen-hero.webp');
 }
 
 .co2-hero {
-    background-image: url('images/treatment-1.webp');
+    background-image: url('images/co2-laser/co2-laser-hero.webp');
 }
 
 .emlift-hero {
-    background-image: url('images/emlift-1.jpeg');
+    background-image: url('images/emlift/emlift-1.jpeg');
 }
 
 .anti-wrinkle-hero {
-    background-image: url('images/anti-wrinkle-hero.webp');
+    background-image: url('images/anti-wrinkle/anti-wrinkle-hero.webp');
 }
 
 .dermal-fillers-hero {
-    background-image: url('images/dermal-fillers-hero.webp');
+    background-image: url('images/dermal-fillers/dermal-fillers-hero.webp');
 }
 
 .lip-enhancement-hero {
-    background-image: url('images/lip-enhancement-hero.jpg');
+    background-image: url('images/lip-enhancement/lip-enhancement-hero.jpg');
 }
 
 .microneedling-hero {
-    background-image: url('images/microneedling-hero.jpg');
+    background-image: url('images/microneedling/microneedling-hero.jpg');
 }
 
 .skin-boosters-hero {
-    background-image: url('images/skin-boosters-hero.jpg');
+    background-image: url('images/skin-boosters/skin-boosters-hero.jpg');
 }
 
 .prp-hero {
-    background-image: url('images/prp-hero.jpg');
+    background-image: url('images/prp-therapy/prp-hero.jpg');
 }
 
 .body-sculpting-hero {
-    background-image: url('images/body-sculpting-hero.jpg');
+    background-image: url('images/body-sculpting/body-sculpting-hero.jpg');
+}
+
+.lymphatic-drainage-hero {
+    background-image: url('images/lymphatic-drainage/spa-interior.jpg');
 }
 
 /* Treatment Introduction */
