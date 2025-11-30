@@ -111,6 +111,15 @@ bookingForm.addEventListener('submit', async (e) => {
     const formData = new FormData(bookingForm);
     const data = Object.fromEntries(formData);
 
+    // Get treatment from either 'service' (homepage) or 'treatment' (treatment pages)
+    const treatment = data.service || data.treatment || null;
+
+    // Get the page name from URL for context
+    const pagePath = window.location.pathname;
+    const pageName = pagePath === '/' || pagePath === '/index.html'
+        ? 'Homepage'
+        : pagePath.replace(/^\//, '').replace(/\.html$/, '').replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+
     // Format date nicely (e.g., "Monday, 15 December 2025")
     let formattedDate = '';
     if (data.date) {
@@ -138,7 +147,10 @@ bookingForm.addEventListener('submit', async (e) => {
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 📋 TREATMENT REQUESTED
-   ${data.service || 'Not specified'}
+   ${treatment || 'Not specified'}
+
+📄 SOURCE PAGE
+   ${pageName}
 
 📅 PREFERRED APPOINTMENT
    Date: ${formattedDate || 'Not specified'}
