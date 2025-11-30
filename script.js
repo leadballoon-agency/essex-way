@@ -178,6 +178,32 @@ bookingForm.addEventListener('submit', async (e) => {
     submitButton.disabled = true;
     submitButton.textContent = 'Sending...';
 
+    // Helper function to show inline message
+    const showFormMessage = (type, message) => {
+        // Remove any existing message
+        const existingMsg = bookingForm.querySelector('.form-message');
+        if (existingMsg) existingMsg.remove();
+
+        // Create message element
+        const msgEl = document.createElement('div');
+        msgEl.className = `form-message form-message-${type}`;
+        msgEl.innerHTML = `
+            <div class="form-message-icon">${type === 'success' ? '✓' : '!'}</div>
+            <div class="form-message-content">
+                <strong>${type === 'success' ? 'Request Sent!' : 'Something went wrong'}</strong>
+                <p>${message}</p>
+            </div>
+        `;
+
+        // Insert before submit button
+        submitButton.parentNode.insertBefore(msgEl, submitButton);
+
+        // Auto-remove success message after 10 seconds
+        if (type === 'success') {
+            setTimeout(() => msgEl.remove(), 10000);
+        }
+    };
+
     try {
         // Send data to GHL webhook
         const response = await fetch('https://services.leadconnectorhq.com/hooks/Sm8uk9iJCYQXWnTkvYpa/webhook-trigger/699d9874-5df6-4ff8-9209-f238635fd859', {
@@ -190,22 +216,19 @@ bookingForm.addEventListener('submit', async (e) => {
 
         if (response.ok) {
             // Show success message
-            alert('Thank you for your booking request! We will contact you shortly to confirm your appointment.');
+            showFormMessage('success', 'Thank you for your booking request! We\'ll contact you shortly to confirm your appointment.');
 
             // Reset form
             bookingForm.reset();
 
-            // Scroll to top
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+            // Scroll form into view
+            bookingForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
         } else {
-            throw new Error('Failed to submit form');
+            throw new Error(`Server responded with ${response.status}`);
         }
     } catch (error) {
         console.error('Error submitting form:', error);
-        alert('There was an error submitting your booking. Please try calling us directly at 07414 452441.');
+        showFormMessage('error', 'We couldn\'t send your request. Please call us directly on <a href="tel:07414452441">07414 452441</a> or try again in a moment.');
     } finally {
         // Re-enable button
         submitButton.disabled = false;
