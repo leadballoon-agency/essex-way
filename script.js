@@ -111,6 +111,55 @@ bookingForm.addEventListener('submit', async (e) => {
     const formData = new FormData(bookingForm);
     const data = Object.fromEntries(formData);
 
+    // Format date nicely (e.g., "Monday, 15 December 2025")
+    let formattedDate = '';
+    if (data.date) {
+        const dateObj = new Date(data.date);
+        formattedDate = dateObj.toLocaleDateString('en-GB', {
+            weekday: 'long',
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric'
+        });
+    }
+
+    // Format time nicely (e.g., "2:00 PM")
+    let formattedTime = '';
+    if (data.time) {
+        const [hours, minutes] = data.time.split(':');
+        const hour = parseInt(hours);
+        formattedTime = `${hour > 12 ? hour - 12 : hour}:${minutes} ${hour >= 12 ? 'PM' : 'AM'}`;
+    }
+
+    // Build formatted notes for GHL
+    const notes = `
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   WEBSITE BOOKING REQUEST
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📋 TREATMENT REQUESTED
+   ${data.service || 'Not specified'}
+
+📅 PREFERRED APPOINTMENT
+   Date: ${formattedDate || 'Not specified'}
+   Time: ${formattedTime || 'Not specified'}
+
+💬 ADDITIONAL NOTES
+   ${data.message || 'None provided'}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   Submitted: ${new Date().toLocaleString('en-GB')}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+`.trim();
+
+    // Prepare payload for GHL with formatted notes
+    const ghlPayload = {
+        name: data.name,
+        email: data.email,
+        phone: data.phone,
+        notes: notes
+    };
+
     // Submit button
     const submitButton = bookingForm.querySelector('button[type="submit"]');
     const originalButtonText = submitButton.textContent;
@@ -124,7 +173,7 @@ bookingForm.addEventListener('submit', async (e) => {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(data)
+            body: JSON.stringify(ghlPayload)
         });
 
         if (response.ok) {
